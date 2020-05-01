@@ -86,89 +86,53 @@ class __TwigTemplate_c083590f8367e6f0764cce7f8d49431f3340def038794edece2aa3056a8
 
         // line 6
         echo "
-\t<article>
-\t\t<h2>Titre de l'article</h2>
-\t\t<div class=\"metadata\"> Ecrit le 10/05/2018 à 19:00 dans la catégorie Politique</div>
-\t\t<div class=\"content\">
+\t<section class=\"articles\">
 
-\t\t\t<img src=\"http://placehold.it/350x150\" alt=\"\">
+\t\t";
+        // line 9
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["articles"]) || array_key_exists("articles", $context) ? $context["articles"] : (function () { throw new RuntimeError('Variable "articles" does not exist.', 9, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["article"]) {
+            // line 10
+            echo "\t\t\t<article>
+\t\t\t\t<h2>";
+            // line 11
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "title", [], "any", false, false, false, 11), "html", null, true);
+            echo "</h2>
+\t\t\t\t<div class=\"metadata\"> Ecrit le ";
+            // line 12
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "createdAt", [], "any", false, false, false, 12), "d/m/Y"), "html", null, true);
+            echo " à ";
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "createdAt", [], "any", false, false, false, 12), "H:i"), "html", null, true);
+            echo " dans la catégorie Politique</div>
+\t\t\t\t<div class=\"content\">
 
-\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-\t\t\ttempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-\t\t\tquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-\t\t\tconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-\t\t\tcillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-\t\t\tproident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+\t\t\t\t\t<img src=\"";
+            // line 15
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "image", [], "any", false, false, false, 15), "html", null, true);
+            echo "\" alt=\"\">
 
-\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-\t\t\ttempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-\t\t\tquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-\t\t\tconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-\t\t\tcillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-\t\t\tproident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+\t\t\t\t\t<p>";
+            // line 17
+            echo twig_get_attribute($this->env, $this->source, $context["article"], "content", [], "any", false, false, false, 17);
+            echo "</p>
 
-\t\t\t<a href=\"";
-        // line 28
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_show");
-        echo "\" class=\"btn btn-primary\">Lire la suite</a>
-\t\t</div>
-\t</article>
+\t\t\t\t\t
 
-\t<article>
-\t\t<h2>Titre de l'article</h2>
-\t\t<div class=\"metadata\"> Ecrit le 10/05/2018 à 19:00 dans la catégorie Politique</div>
-\t\t<div class=\"content\">
-\t\t\t
-\t\t\t<img src=\"http://placehold.it/350x150\" alt=\"\">
-
-\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-\t\t\ttempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-\t\t\tquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-\t\t\tconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-\t\t\tcillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-\t\t\tproident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-\t\t\ttempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-\t\t\tquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-\t\t\tconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-\t\t\tcillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-\t\t\tproident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-\t\t\t<a href=\"";
-        // line 53
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_show");
-        echo "\" class=\"btn btn-primary\">Lire la suite</a>
-\t\t</div>
-\t</article>
-
-\t<article>
-\t\t<h2>Titre de l'article</h2>
-\t\t<div class=\"metadata\"> Ecrit le 10/05/2018 à 19:00 dans la catégorie Politique</div>
-\t\t<div class=\"content\">
-\t\t\t
-\t\t\t<img src=\"http://placehold.it/350x150\" alt=\"\">
-
-\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-\t\t\ttempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-\t\t\tquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-\t\t\tconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-\t\t\tcillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-\t\t\tproident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-\t\t\ttempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-\t\t\tquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-\t\t\tconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-\t\t\tcillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-\t\t\tproident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-\t\t\t<a href=\"";
-        // line 78
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_show");
-        echo "\" class=\"btn btn-primary\">Lire la suite</a>
-\t\t</div>
-\t</article>
+\t\t\t\t\t<a href=\"";
+            // line 21
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_show", ["id" => twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 21)]), "html", null, true);
+            echo "\" class=\"btn btn-primary\">Lire la suite</a>
+\t\t\t\t</div>
+\t\t\t</article>
+\t\t";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['article'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 25
+        echo "
+\t</section>
 
 
 ";
@@ -192,7 +156,7 @@ class __TwigTemplate_c083590f8367e6f0764cce7f8d49431f3340def038794edece2aa3056a8
 
     public function getDebugInfo()
     {
-        return array (  168 => 78,  140 => 53,  112 => 28,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  134 => 25,  124 => 21,  117 => 17,  112 => 15,  104 => 12,  100 => 11,  97 => 10,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -203,80 +167,26 @@ class __TwigTemplate_c083590f8367e6f0764cce7f8d49431f3340def038794edece2aa3056a8
 
 {% block body %}
 
-\t<article>
-\t\t<h2>Titre de l'article</h2>
-\t\t<div class=\"metadata\"> Ecrit le 10/05/2018 à 19:00 dans la catégorie Politique</div>
-\t\t<div class=\"content\">
+\t<section class=\"articles\">
 
-\t\t\t<img src=\"http://placehold.it/350x150\" alt=\"\">
+\t\t{% for article in articles %}
+\t\t\t<article>
+\t\t\t\t<h2>{{ article.title }}</h2>
+\t\t\t\t<div class=\"metadata\"> Ecrit le {{ article.createdAt | date(\"d/m/Y\") }} à {{ article.createdAt | date(\"H:i\") }} dans la catégorie Politique</div>
+\t\t\t\t<div class=\"content\">
 
-\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-\t\t\ttempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-\t\t\tquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-\t\t\tconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-\t\t\tcillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-\t\t\tproident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+\t\t\t\t\t<img src=\"{{ article.image }}\" alt=\"\">
 
-\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-\t\t\ttempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-\t\t\tquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-\t\t\tconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-\t\t\tcillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-\t\t\tproident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+\t\t\t\t\t<p>{{ article.content | raw }}</p>
 
-\t\t\t<a href=\"{{ path(\"blog_show\") }}\" class=\"btn btn-primary\">Lire la suite</a>
-\t\t</div>
-\t</article>
+\t\t\t\t\t
 
-\t<article>
-\t\t<h2>Titre de l'article</h2>
-\t\t<div class=\"metadata\"> Ecrit le 10/05/2018 à 19:00 dans la catégorie Politique</div>
-\t\t<div class=\"content\">
-\t\t\t
-\t\t\t<img src=\"http://placehold.it/350x150\" alt=\"\">
+\t\t\t\t\t<a href=\"{{ path(\"blog_show\", {\"id\": article.id}) }}\" class=\"btn btn-primary\">Lire la suite</a>
+\t\t\t\t</div>
+\t\t\t</article>
+\t\t{% endfor %}
 
-\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-\t\t\ttempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-\t\t\tquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-\t\t\tconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-\t\t\tcillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-\t\t\tproident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-\t\t\ttempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-\t\t\tquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-\t\t\tconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-\t\t\tcillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-\t\t\tproident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-\t\t\t<a href=\"{{ path(\"blog_show\") }}\" class=\"btn btn-primary\">Lire la suite</a>
-\t\t</div>
-\t</article>
-
-\t<article>
-\t\t<h2>Titre de l'article</h2>
-\t\t<div class=\"metadata\"> Ecrit le 10/05/2018 à 19:00 dans la catégorie Politique</div>
-\t\t<div class=\"content\">
-\t\t\t
-\t\t\t<img src=\"http://placehold.it/350x150\" alt=\"\">
-
-\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-\t\t\ttempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-\t\t\tquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-\t\t\tconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-\t\t\tcillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-\t\t\tproident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-\t\t\ttempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-\t\t\tquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-\t\t\tconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-\t\t\tcillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-\t\t\tproident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-\t\t\t<a href=\"{{ path(\"blog_show\") }}\" class=\"btn btn-primary\">Lire la suite</a>
-\t\t</div>
-\t</article>
+\t</section>
 
 
 {% endblock %}

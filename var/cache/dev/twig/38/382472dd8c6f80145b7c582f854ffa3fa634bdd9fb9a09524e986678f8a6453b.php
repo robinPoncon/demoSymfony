@@ -67,39 +67,27 @@ class __TwigTemplate_76bc7374a4e8a380d6b7dbc4a144bce623dfac5054a53223e472d815db5
         // line 4
         echo "
 \t<article>
-\t\t<h2>Titre de l'article</h2>
-\t\t<div class=\"metadata\"> Ecrit le 10/05/2018 à 19:00 dans la catégorie Politique</div>
+\t\t<h2>";
+        // line 6
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["article"]) || array_key_exists("article", $context) ? $context["article"] : (function () { throw new RuntimeError('Variable "article" does not exist.', 6, $this->source); })()), "title", [], "any", false, false, false, 6), "html", null, true);
+        echo "</h2>
+\t\t<div class=\"metadata\"> Ecrit le ";
+        // line 7
+        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["article"]) || array_key_exists("article", $context) ? $context["article"] : (function () { throw new RuntimeError('Variable "article" does not exist.', 7, $this->source); })()), "createdAt", [], "any", false, false, false, 7), "d/m/Y"), "html", null, true);
+        echo " à ";
+        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["article"]) || array_key_exists("article", $context) ? $context["article"] : (function () { throw new RuntimeError('Variable "article" does not exist.', 7, $this->source); })()), "createdAt", [], "any", false, false, false, 7), "H:i"), "html", null, true);
+        echo " dans la catégorie Politique</div>
 \t\t<div class=\"content\">
 
-\t\t\t<img src=\"http://placehold.it/350x150\" alt=\"\">
+\t\t\t<img src=\"";
+        // line 10
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["article"]) || array_key_exists("article", $context) ? $context["article"] : (function () { throw new RuntimeError('Variable "article" does not exist.', 10, $this->source); })()), "image", [], "any", false, false, false, 10), "html", null, true);
+        echo "\" alt=\"\">
 
-\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-\t\t\ttempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-\t\t\tquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-\t\t\tconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-\t\t\tcillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-\t\t\tproident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-\t\t\ttempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-\t\t\tquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-\t\t\tconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-\t\t\tcillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-\t\t\tproident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-\t\t\ttempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-\t\t\tquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-\t\t\tconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-\t\t\tcillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-\t\t\tproident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-
-\t\t\ttempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-\t\t\tquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-\t\t\tconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-\t\t\tcillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-\t\t\tproident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+\t\t\t<p>";
+        // line 12
+        echo twig_get_attribute($this->env, $this->source, (isset($context["article"]) || array_key_exists("article", $context) ? $context["article"] : (function () { throw new RuntimeError('Variable "article" does not exist.', 12, $this->source); })()), "content", [], "any", false, false, false, 12);
+        echo " </p>
 
 \t\t</div>
 \t</article>
@@ -125,7 +113,7 @@ class __TwigTemplate_76bc7374a4e8a380d6b7dbc4a144bce623dfac5054a53223e472d815db5
 
     public function getDebugInfo()
     {
-        return array (  68 => 4,  58 => 3,  35 => 1,);
+        return array (  89 => 12,  84 => 10,  76 => 7,  72 => 6,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -135,39 +123,13 @@ class __TwigTemplate_76bc7374a4e8a380d6b7dbc4a144bce623dfac5054a53223e472d815db5
 {% block body %}
 
 \t<article>
-\t\t<h2>Titre de l'article</h2>
-\t\t<div class=\"metadata\"> Ecrit le 10/05/2018 à 19:00 dans la catégorie Politique</div>
+\t\t<h2>{{ article.title }}</h2>
+\t\t<div class=\"metadata\"> Ecrit le {{ article.createdAt | date(\"d/m/Y\") }} à {{ article.createdAt | date(\"H:i\") }} dans la catégorie Politique</div>
 \t\t<div class=\"content\">
 
-\t\t\t<img src=\"http://placehold.it/350x150\" alt=\"\">
+\t\t\t<img src=\"{{ article.image }}\" alt=\"\">
 
-\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-\t\t\ttempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-\t\t\tquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-\t\t\tconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-\t\t\tcillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-\t\t\tproident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-\t\t\ttempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-\t\t\tquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-\t\t\tconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-\t\t\tcillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-\t\t\tproident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-\t\t\ttempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-\t\t\tquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-\t\t\tconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-\t\t\tcillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-\t\t\tproident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-
-\t\t\ttempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-\t\t\tquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-\t\t\tconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-\t\t\tcillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-\t\t\tproident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+\t\t\t<p>{{ article.content | raw }} </p>
 
 \t\t</div>
 \t</article>
