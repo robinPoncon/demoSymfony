@@ -77,7 +77,10 @@ class __TwigTemplate_e7ce285795e062fab11f908ddd4519cccbac4c02ac0731908982a22b4e3
         echo "\">Articles</a>
 \t\t      \t\t</li>
 \t\t      \t\t<li class=\"nav-item\">
-\t\t        \t\t<a class=\"nav-link\" href=\"/blog/new\">Créer un article</a>
+\t\t        \t\t<a class=\"nav-link\" href=\"";
+        // line 22
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_create");
+        echo "\">Créer un article</a>
 \t\t      \t\t</li>
 \t\t    \t</ul>
 \t\t  \t</div>
@@ -188,7 +191,7 @@ class __TwigTemplate_e7ce285795e062fab11f908ddd4519cccbac4c02ac0731908982a22b4e3
 
     public function getDebugInfo()
     {
-        return array (  162 => 30,  144 => 28,  126 => 7,  107 => 5,  95 => 31,  93 => 30,  90 => 29,  88 => 28,  76 => 19,  65 => 11,  60 => 8,  58 => 7,  53 => 5,  47 => 1,);
+        return array (  165 => 30,  147 => 28,  129 => 7,  110 => 5,  98 => 31,  96 => 30,  93 => 29,  91 => 28,  82 => 22,  76 => 19,  65 => 11,  60 => 8,  58 => 7,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -214,7 +217,7 @@ class __TwigTemplate_e7ce285795e062fab11f908ddd4519cccbac4c02ac0731908982a22b4e3
 \t\t        \t\t<a class=\"nav-link\" href=\"{{ path(\"blog\") }}\">Articles</a>
 \t\t      \t\t</li>
 \t\t      \t\t<li class=\"nav-item\">
-\t\t        \t\t<a class=\"nav-link\" href=\"/blog/new\">Créer un article</a>
+\t\t        \t\t<a class=\"nav-link\" href=\"{{ path(\"blog_create\") }}\">Créer un article</a>
 \t\t      \t\t</li>
 \t\t    \t</ul>
 \t\t  \t</div>
