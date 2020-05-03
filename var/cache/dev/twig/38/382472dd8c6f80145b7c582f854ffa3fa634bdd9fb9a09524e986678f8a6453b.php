@@ -76,7 +76,9 @@ class __TwigTemplate_76bc7374a4e8a380d6b7dbc4a144bce623dfac5054a53223e472d815db5
         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["article"]) || array_key_exists("article", $context) ? $context["article"] : (function () { throw new RuntimeError('Variable "article" does not exist.', 7, $this->source); })()), "createdAt", [], "any", false, false, false, 7), "d/m/Y"), "html", null, true);
         echo " à ";
         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["article"]) || array_key_exists("article", $context) ? $context["article"] : (function () { throw new RuntimeError('Variable "article" does not exist.', 7, $this->source); })()), "createdAt", [], "any", false, false, false, 7), "H:i"), "html", null, true);
-        echo " dans la catégorie Politique</div>
+        echo " dans la catégorie ";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["article"]) || array_key_exists("article", $context) ? $context["article"] : (function () { throw new RuntimeError('Variable "article" does not exist.', 7, $this->source); })()), "category", [], "any", false, false, false, 7), "title", [], "any", false, false, false, 7), "html", null, true);
+        echo "</div>
 \t\t<div class=\"content\">
 
 \t\t\t<img src=\"";
@@ -91,6 +93,40 @@ class __TwigTemplate_76bc7374a4e8a380d6b7dbc4a144bce623dfac5054a53223e472d815db5
 
 \t\t</div>
 \t</article>
+
+\t<section id=\"commentaires\">
+\t\t";
+        // line 18
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["article"]) || array_key_exists("article", $context) ? $context["article"] : (function () { throw new RuntimeError('Variable "article" does not exist.', 18, $this->source); })()), "comments", [], "any", false, false, false, 18));
+        foreach ($context['_seq'] as $context["_key"] => $context["comment"]) {
+            // line 19
+            echo "\t\t\t<div class=\"comment\">
+\t\t\t\t<div class=\"row\">
+\t\t\t\t\t<div class=\"col-3\">
+\t\t\t\t\t\t";
+            // line 22
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "author", [], "any", false, false, false, 22), "html", null, true);
+            echo " (<small>";
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "createdAt", [], "any", false, false, false, 22), "d/m/Y à H:i"), "html", null, true);
+            echo "</small>)
+\t\t\t\t\t</div>
+
+\t\t\t\t\t<div class=\"col\">
+\t\t\t\t\t\t";
+            // line 26
+            echo twig_get_attribute($this->env, $this->source, $context["comment"], "content", [], "any", false, false, false, 26);
+            echo "
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['comment'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 31
+        echo "\t</section>
 
 ";
         
@@ -113,7 +149,7 @@ class __TwigTemplate_76bc7374a4e8a380d6b7dbc4a144bce623dfac5054a53223e472d815db5
 
     public function getDebugInfo()
     {
-        return array (  89 => 12,  84 => 10,  76 => 7,  72 => 6,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  129 => 31,  118 => 26,  109 => 22,  104 => 19,  100 => 18,  91 => 12,  86 => 10,  76 => 7,  72 => 6,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -124,7 +160,7 @@ class __TwigTemplate_76bc7374a4e8a380d6b7dbc4a144bce623dfac5054a53223e472d815db5
 
 \t<article>
 \t\t<h2>{{ article.title }}</h2>
-\t\t<div class=\"metadata\"> Ecrit le {{ article.createdAt | date(\"d/m/Y\") }} à {{ article.createdAt | date(\"H:i\") }} dans la catégorie Politique</div>
+\t\t<div class=\"metadata\"> Ecrit le {{ article.createdAt | date(\"d/m/Y\") }} à {{ article.createdAt | date(\"H:i\") }} dans la catégorie {{ article.category.title }}</div>
 \t\t<div class=\"content\">
 
 \t\t\t<img src=\"{{ article.image }}\" alt=\"\">
@@ -133,6 +169,22 @@ class __TwigTemplate_76bc7374a4e8a380d6b7dbc4a144bce623dfac5054a53223e472d815db5
 
 \t\t</div>
 \t</article>
+
+\t<section id=\"commentaires\">
+\t\t{% for comment in article.comments %}
+\t\t\t<div class=\"comment\">
+\t\t\t\t<div class=\"row\">
+\t\t\t\t\t<div class=\"col-3\">
+\t\t\t\t\t\t{{ comment.author }} (<small>{{ comment.createdAt | date(\"d/m/Y à H:i\") }}</small>)
+\t\t\t\t\t</div>
+
+\t\t\t\t\t<div class=\"col\">
+\t\t\t\t\t\t{{ comment.content | raw }}
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t{% endfor %}
+\t</section>
 
 {% endblock %}", "blog/show.html.twig", "/Users/robinponcon/Sites/demo/templates/blog/show.html.twig");
     }

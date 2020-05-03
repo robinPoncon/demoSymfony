@@ -113,6 +113,10 @@ class ComposerStaticInit3b28a319ce772db9985084a045ea1f26
         array (
             'Monolog\\' => 8,
         ),
+        'F' => 
+        array (
+            'Faker\\' => 6,
+        ),
         'E' => 
         array (
             'Egulias\\EmailValidator\\' => 23,
@@ -444,6 +448,10 @@ class ComposerStaticInit3b28a319ce772db9985084a045ea1f26
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
+        ),
+        'Faker\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
         ),
         'Egulias\\EmailValidator\\' => 
         array (
