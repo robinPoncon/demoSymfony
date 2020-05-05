@@ -82,19 +82,41 @@ class __TwigTemplate_e7ce285795e062fab11f908ddd4519cccbac4c02ac0731908982a22b4e3
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_create");
         echo "\">Créer un article</a>
 \t\t      \t\t</li>
-\t\t    \t</ul>
+\t\t      \t\t";
+        // line 24
+        if ( !twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 24, $this->source); })()), "user", [], "any", false, false, false, 24)) {
+            // line 25
+            echo "\t\t\t      \t\t<li class=\"nav-item\">
+\t\t\t      \t\t\t<a href=\"";
+            // line 26
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("security_login");
+            echo "\" class=\"nav-link\"> Connexion </a>
+\t\t\t      \t\t</li>
+\t\t      \t\t";
+        } else {
+            // line 29
+            echo "\t\t\t      \t\t<li class=\"nav-item\">
+\t\t\t      \t\t\t<a href=\"";
+            // line 30
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("security_logout");
+            echo "\" class=\"nav-link\"> Déconnexion </a>
+\t\t\t      \t\t</li>
+\t\t      \t\t";
+        }
+        // line 33
+        echo "\t\t    \t</ul>
 \t\t  \t</div>
 \t\t</nav>
 \t\t<div class=\"container mt-4\">
 \t\t\t";
-        // line 28
+        // line 37
         $this->displayBlock('body', $context, $blocks);
-        // line 29
+        // line 38
         echo "\t\t</div>
         ";
-        // line 30
+        // line 39
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 31
+        // line 40
         echo "    </body>
 </html>
 ";
@@ -143,7 +165,7 @@ class __TwigTemplate_e7ce285795e062fab11f908ddd4519cccbac4c02ac0731908982a22b4e3
 
     }
 
-    // line 28
+    // line 37
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -161,7 +183,7 @@ class __TwigTemplate_e7ce285795e062fab11f908ddd4519cccbac4c02ac0731908982a22b4e3
 
     }
 
-    // line 30
+    // line 39
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -191,7 +213,7 @@ class __TwigTemplate_e7ce285795e062fab11f908ddd4519cccbac4c02ac0731908982a22b4e3
 
     public function getDebugInfo()
     {
-        return array (  165 => 30,  147 => 28,  129 => 7,  110 => 5,  98 => 31,  96 => 30,  93 => 29,  91 => 28,  82 => 22,  76 => 19,  65 => 11,  60 => 8,  58 => 7,  53 => 5,  47 => 1,);
+        return array (  187 => 39,  169 => 37,  151 => 7,  132 => 5,  120 => 40,  118 => 39,  115 => 38,  113 => 37,  107 => 33,  101 => 30,  98 => 29,  92 => 26,  89 => 25,  87 => 24,  82 => 22,  76 => 19,  65 => 11,  60 => 8,  58 => 7,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -219,6 +241,15 @@ class __TwigTemplate_e7ce285795e062fab11f908ddd4519cccbac4c02ac0731908982a22b4e3
 \t\t      \t\t<li class=\"nav-item\">
 \t\t        \t\t<a class=\"nav-link\" href=\"{{ path(\"blog_create\") }}\">Créer un article</a>
 \t\t      \t\t</li>
+\t\t      \t\t{% if not app.user %}
+\t\t\t      \t\t<li class=\"nav-item\">
+\t\t\t      \t\t\t<a href=\"{{ path(\"security_login\") }}\" class=\"nav-link\"> Connexion </a>
+\t\t\t      \t\t</li>
+\t\t      \t\t{% else %}
+\t\t\t      \t\t<li class=\"nav-item\">
+\t\t\t      \t\t\t<a href=\"{{ path(\"security_logout\") }}\" class=\"nav-link\"> Déconnexion </a>
+\t\t\t      \t\t</li>
+\t\t      \t\t{% endif %}
 \t\t    \t</ul>
 \t\t  \t</div>
 \t\t</nav>
